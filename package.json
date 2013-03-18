@@ -1,0 +1,23 @@
+{
+    "name": "lsm",
+    "description": "Determine textual likeness with Language Style Matching",
+    "main":"./lib",
+    "version": "0.0.1",
+    "author": "Max Thayer <garbados@gmail.com>",
+    "license": "MIT",
+    "keywords": ["linguistics", "language", "text analysis"],
+    "homepage": "https://github.com/garbados/lsm",
+    "repository" : {
+        "type": "git", 
+        "url": "git@github.com:garbados/lsm.git"
+    },
+    "engines": {
+        "node": ">= 0.8.17"
+    },
+    "dependencies": {
+        "js-combinatorics": ">= 0.2.5"
+    },
+    "scripts":{
+        "test": "node ./lib/test.js"
+    }
+}

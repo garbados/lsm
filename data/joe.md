@@ -1,0 +1,11 @@
+Guest post by Joe Nigro, Business Evangelist at Vsnap, and instructor in our sales & business development track.
+
+I reached out to the Startup Institute and offered up my services to teach the Sales Track. I was thankful to be given the opportunity to do so and gave it my best shot. I kept it fresh, collaborative and to the point. Below are The 3 Pillars of Sales that I shared with this talented crew of students:
+
+You need to be relevant. One of my mentors here in the Boston entrepreneurial ecosystem is Rob Ciampa. He is always telling me to get involved with social media, blogs, video and more so, just creating a personal and professional brand. This helps to  show legitimacy in that company, industry, or organization. People like knowing they are talking to someone who knows more than they do about a particular topic.
+
+You need to be thoughtful. I worked for Keith Ferrazzi who is a New York Times Bestselling author. He taught me that valuing the details in every relationship matter. Does that contact have a spouse? Does that contact have kids? Does that contact drink wine? If so, what kind? Bordeaux? Chardonnay? These small details help you break down that wall of building an intimate relationship. Keeping tabs on those small details has worked out very well for him and anyone who has read his book, Never Eat Alone.
+
+You need to help me help you. This is my favorite and very simple to implement. When you are putting your customers first and doing everything you can do to help them succeed, you will be rewarded. That may be connecting them to one of your relationships, inviting them to an event you will be attending or just lending them an ear and offering advice. Whatever it is, you need to remember, its not selling, its building. Whoever has the strongest relationships will always prevail.
+
+I hope this quick rundown from teaching this extraordinary Startup Institute class was helpful to you. If you would like to learn more or have any questions, please let me know! It’s joe@vsnap.com
