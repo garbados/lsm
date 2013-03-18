@@ -1,6 +1,7 @@
 lsm = require('./lsm').LSM
 fs = require 'fs'
 cmb = require('js-combinatorics').Combinatorics
+assert = require 'assert'
 
 # compute most like each other
 most_alike = (texts) ->
@@ -38,5 +39,9 @@ fs.readdir "#{__dirname}/../data", (err, files) ->
 					name: file, 
 					text: new lsm data.toString()
 				if files.length is Object.keys(texts).length
-					console.log most_alike texts
-					console.log most_average texts
+					likeness = most_alike texts
+					assert likeness[0].indexOf('joe.md') > -1
+					assert likeness[0].indexOf('kaylee.md') > -1
+					averageness = most_average texts
+					assert.equal averageness[0].name, 'kaylee.md'
+					console.log 'tests passed!'
