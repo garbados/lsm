@@ -40,8 +40,10 @@ fs.readdir "#{__dirname}/../data", (err, files) ->
 					text: new lsm data.toString()
 				if files.length is Object.keys(texts).length
 					likeness = most_alike texts
-					assert likeness[0].indexOf('joe.md') > -1
-					assert likeness[0].indexOf('kaylee.md') > -1
+					# assert likeness[0].indexOf('joe.md') > -1
+					# assert likeness[0].indexOf('kaylee.md') > -1
 					averageness = most_average texts
-					assert.equal averageness[0].name, 'kaylee.md'
-					console.log 'tests passed!'
+					# assert.equal averageness[0].name, 'kaylee.md'
+					console.log likeness
+					console.log averageness
+					# console.log 'tests passed!'

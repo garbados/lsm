@@ -15,6 +15,9 @@
         "node": ">= 0.8.17"
     },
     "dependencies": {
+        "pos": "git://github.com/fortnightlabs/pos-js.git"
+    },
+    "devDependencies": {
         "js-combinatorics": ">= 0.2.5"
     },
     "scripts":{

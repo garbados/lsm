@@ -1,11 +1,21 @@
+pos = require 'pos'
+lexer = new pos.Lexer()
+tagger = new pos.Tagger()
 fwords = require './fwords'
 
+# Absolute Difference Score
 abs_diff_score = (preps1, preps2) ->
-	# .0001 to stay consistent with academic research's formula
-	return 1 - (Math.abs(preps1 - preps2) / (preps1 + preps2 + .0001))
+	difference = (Math.abs(preps1 - preps2) / (preps1 + preps2))
+	if difference is Infinity
+		return 0
+	else
+		return 1 - difference
 
-reduce_to_words = (text) ->
-	(word.toLowerCase() for word in text.match(/\w+/g))
+# returns an array of all the tags found in the text body
+lex_and_tag = (text) ->
+	words = lexer.lex(text)
+	tags = tagger.tag(words)
+	(tag[1] for tag in tags)
 
 Counter = (arr) ->
 	# like Python's Counter(), returns an object whose keys 
@@ -19,22 +29,29 @@ Counter = (arr) ->
 			counter[item] = 1
 	return counter
 
-class LSM
-	constructor: (@text) ->
-		if @text
-			@reduced = reduce_to_words @text
-			@counter = Counter(@reduced)
-			@fwords = {}
-			@percents = {}
-			@calc_percents()
+# calculate the percentage of each function group
+# as a proportion of the total text body
+calc_percents = (counter) ->
+	funcs = {}
+	if not (k for k,v of counter).length then return funcs
+	total = (v for k,v of counter).reduce (x,y) -> x + y
+	for func in fwords
+		funcs[func] = counter[func] / total
+	return funcs
 
-	calc_percents: () ->
-		# flesh out @fwords and @percents
-		for func, wordlist of fwords
-			@fwords[func] = 0
-			for word in wordlist
-				@fwords[func] += @counter[word] or 0
-			@percents[func] = @fwords[func] / @reduced.length
+class LSM
+	constructor: (opts) ->
+		if typeof(opts) is typeof('')
+			@text = opts
+		else
+			@text = opts.text
+			@percents = opts.percents
+
+		# if percents is falsy, derive profile from text
+		if not @percents
+			@tags = lex_and_tag @text
+			@counter = Counter @tags
+			@percents = calc_percents @counter
 
 	compare: (other) ->
 		total = []
@@ -42,13 +59,17 @@ class LSM
 			weight = Math.abs(1 - (percent + other.percents[func])/2)
 			diff = abs_diff_score percent, other.percents[func]
 			total.push diff * weight
-		sum = total.reduce (prev, curr) ->
-			if prev then prev + curr else curr
-		return sum / total.length
+		if total.length
+			sum = total.reduce (prev, curr) ->
+				if prev then prev + curr else curr
+			return sum / total.length
+		else
+			return 0
 
 	combine: (other) ->
 		# returns a new LSM by combining two text bodies
-		text = other.text or other
-		return new LSM(@text + ' ' + text)
+		return new LSM
+			text: other.text or other
+			percents: other.percents
 
 exports.LSM = LSM

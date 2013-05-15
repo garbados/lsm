@@ -1,163 +1,19 @@
-module.exports = {
-	prepositions:
-		['about',
-		'across',
-		'against',
-		'along ',
-		'around',
-		'at',
-		'behind',
-		'beside',
-		'besides',
-		'by',
-		'despite',
-		'down',
-		'during',
-		'for',
-		'from',
-		'in',
-		'inside',
-		'into',
-		'near',
-		'of',
-		'off',
-		'on',
-		'onto',
-		'over',
-		'through',
-		'to',
-		'toward',
-		'with',
-		'within',
-		'without']
-	pronouns:
-		['i',
-		'y', # appears via words like "y'all"
-		'you',
-		'he',
-		'me',
-		'her',
-		'him',
-		'my',
-		'mine',
-		'her',
-		'hers',
-		'his',
-		'myself',
-		'himself',
-		'herself',
-		'anything',
-		'everything',
-		'anyone',
-		'everyone',
-		'ones',
-		'such',
-		'it',
-		'we',
-		'they',
-		'us',
-		'them',
-		'our',
-		'ours',
-		'their',
-		'theirs',
-		'itself',
-		'ourselves',
-		'themselves',
-		'something',
-		'nothing',
-		'someone']
-	determiners:
-		['the',
-		'some',
-		'this',
-		'that',
-		'every',
-		'all',
-		'both',
-		'one',
-		'first',
-		'other',
-		'next',
-		'many',
-		'much',
-		'more',
-		'most',
-		'several',
-		'no',
-		'a',
-		'an',
-		'any',
-		'each',
-		'no',
-		'half',
-		'twice',
-		'two',
-		'second',
-		'another',
-		'last',
-		'few',
-		'little',
-		'less',
-		'least',
-		'own']
-	conjunctions:
-		['and',
-		'but',
-		'after',
-		'when',
-		'as',
-		'because',
-		'if',
-		'what',
-		'where',
-		'which',
-		'how',
-		'than',
-		'or',
-		'so',
-		'before',
-		'since',
-		'while',
-		'although',
-		'though',
-		'who',
-		'whose']
-	modal_verbs:
-		['can',
-		'may',
-		'will',
-		'shall',
-		'could',
-		'might',
-		'would',
-		'should',
-		'must']
-	primary_verbs:
-		['be',
-		'do',
-		'have']
-	adverbs:
-		['here',
-		'there',
-		'today',
-		'tomorrow',
-		'now',
-		'then',
-		'always',
-		'never',
-		'sometimes',
-		'usually',
-		'often',
-		'therefore',
-		'however',
-		'besides',
-		'moreover',
-		'though',
-		'otherwise',
-		'else',
-		'instead',
-		'anyway',
-		'incidentally',
-		'meanwhile']
-}
+module.exports = [
+  "CC"	# Coord Conjuncn          and,but,or
+	"CD"	# Cardinal number         one,two
+	"DT"	# Determiner              the,some
+	"EX"	# Existential there       there
+	"IN"	# Preposition             of,in,by
+	"LS"	# List item marker        1,One
+	"MD"	# Modal                   can,should
+	"PDT"	# Predeterminer           all, both
+	"PP$"	# Possessive pronoun      my,oneÕs
+	"PRP"	# Personal pronoun        I,you,she
+	"RP"	# Particle                up,off
+	"TO"	# ÒtoÓ                    to
+	"UH"	# Interjection            oh, oops
+	"WDT"	# Wh-determiner           which,that
+	"WP"	# Wh pronoun              who,what
+	"WP$"	# Possessive-Wh           whose
+	"WRB"	# Wh-adverb               how,where
+]
