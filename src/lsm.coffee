@@ -36,7 +36,7 @@ calc_percents = (counter) ->
 	if not (k for k,v of counter).length then return funcs
 	total = (v for k,v of counter).reduce (x,y) -> x + y
 	for func in fwords
-		funcs[func] = counter[func] / total
+		funcs[func] = (counter[func] / total) or 0
 	return funcs
 
 class LSM
