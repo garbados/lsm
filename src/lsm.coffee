@@ -6,7 +6,7 @@ fwords = require './fwords'
 # Absolute Difference Score
 abs_diff_score = (preps1, preps2) ->
 	difference = (Math.abs(preps1 - preps2) / (preps1 + preps2))
-	if difference is Infinity
+	if difference is Infinity or isNaN(difference)
 		return 0
 	else
 		return 1 - difference
