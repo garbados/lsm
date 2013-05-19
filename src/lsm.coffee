@@ -5,11 +5,7 @@ fwords = require './fwords'
 
 # Absolute Difference Score
 abs_diff_score = (preps1, preps2) ->
-	difference = (Math.abs(preps1 - preps2) / (preps1 + preps2))
-	if difference is Infinity or isNaN(difference)
-		return 0
-	else
-		return 1 - difference
+	1 - (Math.abs(preps1 - preps2) / (preps1 + preps2 + Number.MIN_VALUE))
 
 # returns an array of all the tags found in the text body
 lex_and_tag = (text) ->
@@ -56,11 +52,15 @@ class LSM
 	compare: (other) ->
 		total = []
 		for func, percent of @percents
-			weight = Math.abs(1 - (percent + other.percents[func])/2)
-			diff = abs_diff_score percent, other.percents[func]
-			total.push diff * weight
+			if percent == other.percents[func]
+				total.push 1
+			else
+				weight = Math.abs(1 - (percent + other.percents[func])/2)
+				diff = abs_diff_score percent, other.percents[func]
+				total.push diff * weight
 		if total.length
-			sum = total.reduce (prev, curr) ->
+			# sum = total.reduce (prev, curr) ->
+			sum = (v for v in total when v > 0).reduce (prev, curr) ->
 				if prev then prev + curr else curr
 			return sum / total.length
 		else

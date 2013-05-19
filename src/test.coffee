@@ -3,6 +3,14 @@ fs = require 'fs'
 cmb = require('js-combinatorics').Combinatorics
 assert = require 'assert'
 
+# is x.compare(x) == 1?
+is_autosimilar = (texts) ->
+	for text in (text.text for text in texts)
+		autolikeness = text.compare text
+		if autolikeness != 1
+			return false
+	return true
+
 # compute most like each other
 most_alike = (texts) ->
 	combos = cmb.combination texts, 2
@@ -38,12 +46,11 @@ fs.readdir "#{__dirname}/../data", (err, files) ->
 				texts.push
 					name: file, 
 					text: new lsm data.toString()
+				# run tests once all texts have been read
 				if files.length is Object.keys(texts).length
+					assert is_autosimilar texts
 					likeness = most_alike texts
-					# assert likeness[0].indexOf('joe.md') > -1
-					# assert likeness[0].indexOf('kaylee.md') > -1
 					averageness = most_average texts
-					# assert.equal averageness[0].name, 'kaylee.md'
 					console.log likeness
 					console.log averageness
 					# console.log 'tests passed!'
