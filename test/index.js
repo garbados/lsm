@@ -23,6 +23,5 @@ describe('lsm', function () {
     assert.equal(result, 0.47398288542787886);
     var result = lib.compare(text_2, text_3);
     assert.equal(result, 0.6620090589323643);
-
   });
 });
