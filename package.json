@@ -19,7 +19,6 @@
     "node": ">= 0.8.17"
   },
   "dependencies": {
-    "js-combinatorics": ">= 0.2.5",
     "pos": "^0.3.0"
   },
   "devDependencies": {
