@@ -11,8 +11,7 @@ An interface for using Language Style Matching to determine the likeness of diff
 ```javascript
 var LSM = require('lsm');
 
-var text_1 = "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
-\"Whenever you feel like criticizing any one,\" he told me, \"just remember that all the people in this world haven't had the advantages that you've had.\"";
+var text_1 = "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. \"Whenever you feel like criticizing any one,\" he told me, \"just remember that all the people in this world haven't had the advantages that you've had.\"";
 
 var text_2 = "I'm a romantic; a sentimental person thinks things will last, a romantic person hopes against hope that they won't.";
 
