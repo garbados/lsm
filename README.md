@@ -17,7 +17,7 @@ var text_2 = "I'm a romantic; a sentimental person thinks things will last, a ro
 
 var result = LSM.compare(text_1, text_2);
 console.log(result);
-// 0.6211902592673091
+// 0.3410958093994814
 ```
 
 A likeness value of 1 indicates that the compared samples are *identical* in their proportions of function words. A value of 0 indicates total dissimilarity.
