@@ -1,26 +1,32 @@
 {
-    "name": "lsm",
-    "description": "Determine textual likeness with Language Style Matching",
-    "main":"./lib",
-    "version": "0.1.2",
-    "author": "Max Thayer <garbados@gmail.com>",
-    "license": "MIT",
-    "keywords": ["linguistics", "language", "text analysis"],
-    "homepage": "https://github.com/garbados/lsm",
-    "repository" : {
-        "type": "git", 
-        "url": "git@github.com:garbados/lsm.git"
-    },
-    "engines": {
-        "node": ">= 0.8.17"
-    },
-    "dependencies": {
-        "pos": "git://github.com/fortnightlabs/pos-js.git"
-    },
-    "devDependencies": {
-        "js-combinatorics": ">= 0.2.5"
-    },
-    "scripts":{
-        "test": "node ./lib/test.js"
-    }
+  "name": "lsm",
+  "description": "Determine textual likeness with Language Style Matching",
+  "main": "./lib",
+  "version": "0.2.0",
+  "author": "Diana Thayer <garbados@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "linguistics",
+    "language",
+    "text analysis"
+  ],
+  "homepage": "https://github.com/garbados/lsm",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:garbados/lsm.git"
+  },
+  "engines": {
+    "node": ">= 0.8.17"
+  },
+  "dependencies": {
+    "js-combinatorics": ">= 0.2.5",
+    "pos": "^0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "standard": "^7.1.1"
+  },
+  "scripts": {
+    "test": "mocha test"
+  }
 }
